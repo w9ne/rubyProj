@@ -82,8 +82,8 @@ class GameLibrary
     end
 
     #title locator
-    def searchGameTitle
-        @games.find { |game| game.title == title}
+    def searchGameTitle(search_title)
+        @games.find { |game| game.title == search_title}
     end
 
     #Print games name?
@@ -193,5 +193,9 @@ def mainMenu(library)
         end
     end
 end
+
+
+#start prog
+mainMenu(gameLib)
 
 
