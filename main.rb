@@ -44,14 +44,20 @@ class GameLibrary
 
     #lists out games
     def list_games
-        @games.each { |game| puts game}
+        @games.each { |game| puts game.gameStatus }
     end
 
     #title locator
     def searchGameTitle
         @games.find { |game| game.title == title}
     end
+
+    #Print games name?
+    def listGameTitle
+        @games.each { |game| puts game.title}
+    end
 end
+
 
 
 # test area
@@ -59,4 +65,4 @@ gameLib = GameLibrary.new
 gameLib.addGame(Game.new("Mario", "1980", "9/10"))
 gameLib.addGame(Game.new("Metal Gear", "2001", "9.5/10"))
 
-gameLib.list_games
+gameLib.list_games #lists game statuses
