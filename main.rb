@@ -106,3 +106,92 @@ gameLib.addGame(ModernGame.new("Forza Horizon 6", "2026", "7/10", false))
 gameLib.addGame(ModernGame.new("Sekiro: Shadows Die Twice", "2019", "10/10", false))
 
 gameLib.list_games #lists game statuses
+
+
+# Menu Area
+def mainMenu(library)
+    #loops my choices and choice gets inputted
+    loop do
+        puts "\n=== Game Library Menu ==="
+        puts "1. List all games"
+        puts "2. Add a new game"
+        puts "3. Search for a game by title"
+        puts "4. Checkout a game"
+        puts "5. Return a game"
+        puts "6. Quit"
+        print "Choose an option: "
+        choice = gets.chomp
+
+        #case choice selection
+        case choice
+        when "1"
+            library.list_games
+        when "2"
+            print "Title: "
+            title = gets.chomp
+            print "Year: "
+            year = gets.chomp
+            print "Rating: "
+            rating = gets.chomp
+            print "Type (retro/modern): "
+            type = gets.chomp.downcase
+
+            # Add game logic
+            if type == "retro"
+                print "Platform: "
+                platform = gets.chomp
+                library.addGame(RetroGame.new(title, year, rating, platform))
+            else
+                print "Has DLC? (y/n): "
+                has_dlc = gets.chomp.downcase == "y"
+                library.addGame(ModernGame.new(title, year, rating, has_dlc))
+            end
+            puts "Game added!"
+        when "3"
+             print "Enter title to search: "
+            search_title = gets.chomp
+            result = library.searchGameTitle(search_title)
+
+            #Search try error
+            if result
+                puts result.gameStatus
+            else
+                puts "No game found with that title."
+            end
+
+        when "4"
+            print "Enter title to checkout: "
+            title = gets.chomp
+            game = library.searchGameTitle(title)
+
+            #Search try error
+            if game
+                game.checkout
+                puts "#{title} checked out."
+            else
+                puts "Game not found."
+            end
+        when "5"
+
+            print "Enter title to return: "
+            title = gets.chomp
+            game = library.searchGameTitle(title)
+
+            #Search try error
+            if game
+                game.returnGame
+                puts "#{title} returned."
+            else
+                puts "Game not found."
+            end
+        
+        when "6"
+            puts "Thank you for visiting GameStore!"
+            break
+        else
+            puts "Please choose a number from 1-6"
+        end
+    end
+end
+
+
