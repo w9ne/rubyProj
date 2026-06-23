@@ -4,7 +4,7 @@ class Game
     attr_accessor :available
 
     #intialize
-    def init(title, year, rating)
+    def initialize(title, year, rating)
         @title = title
         @year = year
         @rating = rating
@@ -23,7 +23,7 @@ class Game
 
     def gameStatus
         status = @available ? "Available" : "Unavailable"
-        print <<EOF
+        puts <<~EOF
             #{@title} released in the year #{@year}, with a rating #{@rating}
             (#{status})
         EOF
@@ -33,7 +33,7 @@ end
 class GameLibrary
 
     #init list
-    def init
+    def initialize
         @games = []
     end
 
@@ -55,8 +55,8 @@ end
 
 
 # test area
-gameLibrary = gameLibrary.new
-gameLibrary.addGame(Game.new("Mario", "1980", "9/10"))
-gameLibrary.addGame(Game.new("Metal Gear", "2001", "9.5/10"))
+gameLib = GameLibrary.new
+gameLib.addGame(Game.new("Mario", "1980", "9/10"))
+gameLib.addGame(Game.new("Metal Gear", "2001", "9.5/10"))
 
-gameLibrary.list_games
+gameLib.list_games
