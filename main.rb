@@ -24,12 +24,13 @@ class Game
     def gameStatus
         status = @available ? "Available" : "Unavailable"
         puts <<~EOF
-            #{@title} released in the year #{@year}, with a rating #{@rating}
+            #{@title} released in the year #{@year}, with a rating of #{@rating}
             (#{status})
         EOF
     end
 end
 
+# Actual game lib
 class GameLibrary
 
     #init list
@@ -64,5 +65,6 @@ end
 gameLib = GameLibrary.new
 gameLib.addGame(Game.new("Mario", "1980", "9/10"))
 gameLib.addGame(Game.new("Metal Gear", "2001", "9.5/10"))
+gameLib.addGame(Game.new("Ace Combat Zero", "2006", "10/10"))
 
 gameLib.list_games #lists game statuses
