@@ -105,7 +105,6 @@ gameLib.addGame(RetroGame.new("Ace Combat Zero", "2006", "10/10", "PS2"))
 gameLib.addGame(ModernGame.new("Forza Horizon 6", "2026", "7/10", false))
 gameLib.addGame(ModernGame.new("Sekiro: Shadows Die Twice", "2019", "10/10", false))
 
-gameLib.list_games #lists game statuses
 
 
 # Menu Area
