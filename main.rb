@@ -90,6 +90,17 @@ class GameLibrary
     def listGameTitle
         @games.each { |game| puts game.title}
     end
+
+    #Sort by Year
+    def sortByYear
+        @games.sort_by { |game| game.year.to_i }
+    end
+
+    #Sort by Rating
+    def sortByRating
+        @games.sort_by { |game| -game.rating.to_f }
+    end
+
 end
 
 
@@ -117,7 +128,9 @@ def mainMenu(library)
         puts "3. Search for a game by title"
         puts "4. Checkout a game"
         puts "5. Return a game"
-        puts "6. Quit"
+        puts "6. Sort games by year"
+        puts "7. Sort games by rating"
+        puts "8. Quit"
         print "Choose an option: "
         choice = gets.chomp
 
@@ -185,7 +198,11 @@ def mainMenu(library)
             end
         
         when "6"
-            puts "Thank you for visiting GameStore!"
+            library.sortByYear.each { |game| puts game.gameStatus }
+        when "7"
+            library.sortByRating.each { |game| puts game.gameStatus }
+        when "8"
+            puts "Thank you for visiting theGameStore!"
             break
         else
             puts "Please choose a number from 1-6"

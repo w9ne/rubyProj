@@ -11,6 +11,10 @@
 - Debugged on my own but asked AI to help me identify very minor syntax errors that I was missing
 
 ## Phase 2: AI Assisted features
+- Asked AI to give me options of what type of interface i should go for (decided with typical console interface)
+- AI helped with the logic of the menu system, but did most of logic on my own
+- AI assisted in creating subclasses and helped bug fix syntax errors
+- 
 
 ## How to run?
 - I set up my env and must always run 
