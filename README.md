@@ -14,7 +14,7 @@
 - Asked AI to give me options of what type of interface i should go for (decided with typical console interface)
 - AI helped with the logic of the menu system, but did most of logic on my own
 - AI assisted in creating subclasses and helped bug fix syntax errors
-- 
+- AI assisted in writing pseudo code for examples 3 and 5
 
 ## How to run?
 - I set up my env and must always run 
